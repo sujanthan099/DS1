@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main()
+{
+int(a[], key,l, f,mid,n) ;
+{
+  while (l <= f) {
+    int mid = l + (f - l) / 2;
+
+    if (a[mid] == key)
+      return mid;
+
+    if (a[mid] < key)
+      l = mid + 1;
+
+    else
+      f = mid - 1;
+  }
+
+  return -1;
+}
+
+int main(void) {
+  int a[] = {3, 4, 5, 6, 7, 8, 9};
+  int n = sizeof(a) / sizeof(a[0]);
+  int key = 4;
+  int result = (a, key, 0, n - 1);
+  if (result == -1)
+    printf("Not found");
+  else
+    printf("Element is found at index %d", result);
+  return 0;
+}
