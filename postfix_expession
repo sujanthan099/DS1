@@ -1,0 +1,42 @@
+#include<ctype.h>
+#include<string.h>
+#define size 20
+int stk[size];
+int top=-1;
+void push(int ch);
+{
+		stk [++top]=ch;
+
+int pop()
+{
+	return stk[top--];
+}
+int main()
+{
+	char in [50],op;
+	int ,i,l,op1,op2,res;
+	printf("enter the exression");
+	getsn(in);
+	l=strlen(in);
+	for(i=0;i<l;i++)
+	{
+		if (is digit(in[i])
+		push((in[i]-'0'));
+		else
+		{
+			op=in[i];
+			op2=pop();
+			op1=pop();
+			switch (op)
+			{
+				case'+':push(op1+op2);break;
+				case'-':push(op1-op2);break;
+				case'*':push(op1*op2);break;
+				case '/':push(op1/op2);break;
+			}
+		}
+	}
+	
+	res=pop();
+	printf("the output=%d",res};
+}
