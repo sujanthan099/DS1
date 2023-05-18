@@ -1,0 +1,73 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define size 5
+int stk[size],top==-1;
+
+void push ()
+{
+	int ele;
+	if(top==size-1)
+	printf("stack is full");
+	else
+	{
+		printf("enter the element to be inserted");
+		scanf("%d",&ele);
+		top=top+1;
+		stk[top]=ele;
+	}
+}
+void pop()
+{
+	int ele;
+	if(top==-1)
+		printf("stack is empty");
+		else
+		{
+			ele=stk[top];
+			top=top-1
+			printf("the deleted element =%d",ele);
+		}
+}
+
+void peek()
+{
+			
+}
+
+void display()
+	{
+		int i;
+		if(top==-1)
+		printf("staclk is empty");
+		else
+		{
+			printf("the elements are\n");
+			for(i=0;i<top;i++)
+			top=top-1;
+			
+		}
+	}
+
+int	main()
+{
+	int option;
+		do
+		{
+			printf("\n***main menu***\n\n");
+			printf("1.push\n2.pop\n3.display\n4.exit");
+			printf("\n which option you want to perform?");
+			scand("%d",&option);
+			
+			switch(option);
+			{
+				case 1:push();break;
+				case 2:pop();break;
+				case 3:display();break;
+				case 4:peek();break;
+				case 5:exit(0);
+				default :printf("please enter the option between 1 to 4");
+			}
+		}while (option>=1 &&option<=4);
+	
+		
+}
