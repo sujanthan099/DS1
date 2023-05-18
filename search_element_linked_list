@@ -1,0 +1,177 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<malloc.h>
+
+struct node
+{
+	int data;
+	struct node * next;
+}*head=NULL,*p,*t,*newnode;
+
+
+
+void create()
+{
+	int n,i,ele;
+	printf("no of elements in the list");
+	scanf("%d" , &n);
+	for(i=0;i<n;i++)
+	{
+		printf("enter the element");
+		scanf("%d",&ele);
+		newnode=(struct node*)malloc(sizeof(struct node));
+        newnode->data=ele;
+		newnode->next=NULL;
+		if(head==NULL)
+		{
+		head=newnode;
+		p=head;
+		}	
+	else
+	{
+		for(p=head;p->next!=NULL;p=p->next);
+		p->next=newnode;
+		p=newnode;
+	}
+}
+}
+
+void insert_at_begin()
+{
+	int ele;
+	printf("enter the elements in the list");
+	scanf("%d",&ele);
+	newnode=(struct node*)malloc(sizeof(struct node));
+	newnode->data=ele;
+	p=head;
+	newnode->next=p;
+	head=newnode;
+	p=newnode;
+}
+
+void display()
+{
+	
+	if(head==NULL)
+	printf("sll is empty");
+	else
+	{
+	
+	for (p=head;p!=NULL;p=p->next)
+	printf("%d\t",p->data);
+	}
+}
+
+void insert_at_end()
+{
+	int ele;
+	printf("enter the elements in the list");
+	scanf("%d",&ele);
+	newnode=(struct node*)malloc(sizeof(struct node));
+	newnode->data=ele;
+	newnode->next=NULL;
+	for(p=head;p->next!=NULL;p=p->next);
+	p->next=newnode;
+	p=newnode;
+}
+
+void insert_at_anyposition()
+{
+	int pos,ele,i;
+	printf("enter ele & pos");
+	scanf("%d%d",&ele,&pos);
+	newnode=(struct node*)malloc(sizeof(struct node));
+	newnode->data=ele;
+	for (i=1,p=head;i<pos;i++,p=p->next)
+	t=p;
+	t->next=newnode;
+	newnode->next=p;
+	p=newnode;
+}
+void delete_at_begin()
+{
+	int ele;
+	p=head;
+	ele:p->data;
+	head=p->next;
+	free(p);
+	p=head;
+	printf("the deleted element=%d",ele);
+}
+void delete_at_end()
+{
+	int ele;
+	for(p=head;p->next!=NULL;p=p->next)
+	t=p;
+	ele=p->data;
+	t->next=NULL;
+	free(p);
+	p=t;
+	printf("the deleted element=%d",ele);
+	
+}
+void delete_at_anyposition()
+{
+	int ele,i,pos;
+	printf(" enter the pos to be deleted");
+	scanf("%d",&pos);
+	for (i=1,p=head;i<pos;i++,p=p->next)
+	t=p;
+	ele=p->data;
+	t->next=p->next;
+	free(p);
+	p=t;
+	printf("the deleted element=%d",ele);
+}
+
+void search_element()
+{
+	int key,flag=0,pos,i;
+	printf("enter the key");
+	scanf("%d",&key);
+	for (i=1,p=head;p!=NULL;i++,p=p->next)
+	{
+		if(p->data==key)
+		{
+			flag=1;
+			pos=i;
+			break;
+		}
+	}	
+if(flag==1)
+printf("the element is present in %d pos",pos);
+else
+printf("the element NOT in the list");
+}
+
+void print_reverse()
+{
+	
+}
+
+int main ( )
+{
+	int opt;
+	do
+	{
+		printf ("\n** Main Menu **\n\n" );
+		printf ("1. create\n2. display\n3.Exit\n .insert_at_begin\n4. insert_at_end\n5, insert_at_anyposition\n6, delete_at_begin\n7,delete_at_end\n8, delete_at_anyposition\n9,search_element\n10,print_reverse\n11" );
+		printf("InWhich option you want to perform?");
+		scanf ("%d", &opt);
+		switch(opt)
+		{
+		    case 1:create ();break;
+			case 2:display ( ); break;
+			case 3:exit (0);
+			case 4:insert_at_begin();break;
+			case 5:insert_at_end();break;
+			case 6:insert_at_anyposition();break;
+			case 7:delete_at_begin();break;
+			case 8:delete_at_end();break;
+			case 9:delete_at_anyposition();break;
+			case 10:search_element();break;
+			case 11:print_reverse();break;
+			default: printf( "please enter the option between 1 to 5 ");
+		}
+	}while (opt>=1 &&opt<=18);
+}
