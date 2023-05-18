@@ -1,0 +1,95 @@
+#include<stdio.h>
+#include<stdlib.h>
+	int A[10],n=5;
+		void input_data()
+		{
+			int i;
+			printf("enter the array elements");
+			for(i=0;i<n;i++);
+			scanf("%d",&A[i]);
+		}
+		void output_data()
+		{
+			int i;
+			printf("the array elements are:");
+			for(i=0;i<n;i++);
+			printf("%d\t",A[i]);
+		}
+		void insertion()
+		{
+			int i,element,position;
+			printf("enter element and position");
+			scanf("%d%d",&element,&position);
+			for(i=n;i>position;i--)
+			A[i]=A[i-1];
+			A[position]=element;
+		}
+		void deletion()
+		{
+			int i ,position;
+			printf("enter the position");
+			scanf("%d",&position);
+			for(i=position;i<n;i++);
+			A[i]=A[i+1];
+		}
+		void search_element()
+		{
+			int key,flag=0,pos,i;
+			printf("enter the key");
+			scanf("%d",&key);
+			for(i=i;p=head;p!=null;i++;p=p->next)
+			{
+				if(p->data==key)
+				{
+					flag=1;
+					pos=i;
+					break;
+				}
+			}
+			if(flag==1)
+			printf("the element is printed in %d position",pos);
+			else
+			printf("the element is not there in the list");
+				}
+			}
+		}
+			int main()
+			{
+
+	int choice;
+	do{
+		printf("\nmain memory \n");
+		printf("\n input data");
+		printf("\noutput data");
+		printf("in 3.insertion");
+		printf("\n 4.deletion");
+		printf("\n5.exit");
+		printf("enter your choice");
+		scanf("%d",&choice);
+		switch(choice)
+		{
+		case 1:input_data();break;
+			case
+			2:output_data();break;
+			case
+			3:insertion();break;
+			case
+			4:deletion();break;
+			case
+			5:exit(0);break;
+			default:
+				printf("enter the choice between 1 to 5");
+			}while(choice>=1 && choice<=5);}
+}
+
+}
+	
+}
+		}
+		}
+		return 0;
+	}
+		
+	}
+}
+
